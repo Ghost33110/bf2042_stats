@@ -74,6 +74,12 @@ module.exports = {
         isLocal: true
       },
       {
+        name: "Blasco",
+        link: "./pictures/BLASCO.png",
+        fileName: "BLASCO.png",
+        isLocal: true
+      },
+      {
         name: "BF3 Recon",
         link: "https://cdn.gametools.network/classes/bf2042/ALX_US_Recon_M-7e71219e.png",
         fileName: "",
