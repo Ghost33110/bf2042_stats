@@ -1,31 +1,37 @@
-# Project Name
+# Bf2042 Stats
 
-TODO: Write a project description
+C'est un petit bot Discord que je dévelope sur mon temps libre. Celui-ci permet d'afficher les statistiques d'un joueur donné (quelque soit la platforme). Si celui-ci a mis son profil en privé, seule les dernières informations sur celui-ci seront remontées. Le bot incorpore également une fonctionnalitée de génération d'un ensemble d'équipement + opérateur aléatoire.
+
 
 ## Installation
 
-TODO: Describe the installation process
+Le code présent dans le dépôt permet d'exécuter soit même le bot. Il nécessite plusieur choses:  
+1. Créer son fichier `config.json` (un exemple du fichier est disponible dans le dépôt - `config_sample.json`).
+2. Renseigner dans ce fichier dans le champs `token` le numéro de token du bot qui est à générer via le site de dévelopement de Discord - [https://discord.com/developers/applications](https://discord.com/developers/applications).
+3. Renseigner également dans le champs `clientId` l'id applicatif du bot (dans le portail de déveopeur Discord, cliquez sur votre bot, puis allez dans "General Information" > application id).
+4. Assurez-vous d'avoir Node JS d'installé, et exécutez la commande `npm install`.
+5. Pour lancer le bot, exécuter la commande `node index.js`. Pour ajouter les commandes nécessaires sur votre serveur, éditer le fichier `guildData.json` avec l'ID de votre serveur Discord (pour le récupérer, activer le mode dévelopeur puis clic-droit sur le nom du serveur -> "Copier l'identifiant du serveur"), et exécuter la commande `node deploy-commands.js`.
+
 
 ## Usage
 
-TODO: Write usage instructions
+Deux commandes sont actuellement disponibles:
+- /stats_bf2042
+- /2042random
 
-## Contributing
+## Contribution
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+Pour l'instant, les contributions externes au dévelopement du bot ne sont pas possibles.
 
-## History
+## Historique
 
-TODO: Write history
+V1.0: intialisation du dépôt - mise en place des premières foncionnalitées
 
 ## Credits
 
-TODO: Write credits
+- API contactée pour la récupération des stats: [https://api.gametools.network/](https://api.gametools.network/docs#/)
+- Framework utilisé: [https://discord.js.org/](https://discord.js.org/)
 
 ## License
 
-TODO: Write license
+[![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)
