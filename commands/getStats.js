@@ -99,7 +99,7 @@ var getWeaponEmbeledMessage = function (data, nickname) {
   let embedMessage = new EmbedBuilder();
   embedMessage.setTitle("Liste des armes de ***" + nickname + "***")
     .setColor("Red")
-    .setThumbnail(bestWeapon.image)
+    .setThumbnail("Melee" === bestWeapon.weaponName ? constants.melee : bestWeapon.image)
     .addFields([
       { name: "Arme le plus joué", value: "__" + bestWeapon.weaponName + "__"},
       { name: 'Eliminations', value: bestWeapon.kills.toString(), inline: true },
@@ -156,6 +156,7 @@ var getMapEmbeledMessage = function (data, nickname) {
 };
 
 var getStats = async function getStats(platform, nickname, statsType, interaction) {
+  interaction.deferReply();
   var response = await fetch(
     "https://api.gametools.network/bf2042/stats/?raw=false&format_values=true&name=" +
       nickname +
@@ -200,12 +201,12 @@ var getStats = async function getStats(platform, nickname, statsType, interactio
       reply.files = [result.file];
     }
     try {
-      interaction.reply(reply);
+      interaction.editReply(reply);
     } catch (e) {
       console.log("Time Out / erreur de traitement");
     }
   } else {
-    interaction.reply(
+    interaction.editReply(
       "Une erreur est survenue lors du traitement de la demande: " +
         data.errors[0]
     );

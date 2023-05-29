@@ -171,5 +171,6 @@ module.exports = {
   },
   test: function() {
     console.log("Module \"constants\" chargé");
-  }
+  },
+  melee: "https://cdn.onlinewebfonts.com/svg/img_546800.png"
 }
